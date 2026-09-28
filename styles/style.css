@@ -1,0 +1,223 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #131313;
+    color: white;
+}
+
+/*Header*/
+
+.header {
+    min-height: 70px;
+    padding: 15px 5%;
+    background: #232323;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.profile {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+header p {    
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+.menu-button {
+    display: none;
+}
+
+main {
+    width: 90%;
+    max-width: 1410px;
+    margin: 40px auto;
+}
+
+.titre {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.intro h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.intro p {
+    color: #9ca3af;
+}
+
+/*Grille des films */
+
+.grille {
+    display: grid;
+    gap: 30px;
+}
+
+/*Contenu sur chaque carte*/
+
+.film {
+    background: #1e2129;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.film:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px rgb(8, 8, 8);
+}
+
+.film img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.info {
+    padding: 15px;
+    font-size: 1.25rem;
+}
+
+.info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.description {
+    display: flex;
+    gap: 30px;
+}
+
+.poster button {
+    width: 50%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #424242;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.poster button:hover {
+    background: #d03c3c;
+}
+
+.film-description {
+    width:100%;
+}
+
+.poster {
+    width:500px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.poster img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.description h1 { 
+    font-size: 3rem;
+}
+
+.description p {
+    font-size: 1.3rem;
+}
+
+.genre span {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: #434343;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/*Interface pour téléphone*/
+
+@media (width <= 750px) {
+
+     .header {
+        flex-wrap: wrap;
+        
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .menu-button {
+        display: block;
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: #232323;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: -1;
+    }
+
+    header p {
+        display: none;
+    }
+
+    nav.actif {
+        transform: translateY(0);
+    }
+
+    nav a {
+        padding: 15px;
+        text-align: left;
+    }
+    /*changement d'alignement de la page film*/
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }
+}
